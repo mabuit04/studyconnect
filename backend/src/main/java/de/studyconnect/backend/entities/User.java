@@ -12,19 +12,11 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-//@Getter
-//@Setter
 public class User extends BaseEntity {
-
-    private String id;
 
     private String email;
 
     private String password_hash;
-    private String name;
-    private String created_at;
-    private String last_login;
-
-
     
+    private String name;
 }
