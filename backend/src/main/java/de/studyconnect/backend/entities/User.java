@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 //import lombok.Getter;
 //import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
+//import java.util.HashSet;
+//import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,24 +16,15 @@ import java.util.Set;
 //@Setter
 public class User extends BaseEntity {
 
-    @NotBlank
-    @Size(min = 2, max = 50)
-    @Column(nullable = false, length = 50)
-    private String firstName;
+    private String id;
 
-    @NotBlank
-    @Size(min = 2, max = 50)
-    @Column(nullable = false, length = 50)
-    private String lastName;
-
-    @NotBlank
-    @Email
-    @Column(nullable = false, unique = true)
     private String email;
 
-    @NotBlank
-    @Column(nullable = false, length = 255)
-    private String password;
+    private String password_hash;
+    private String name;
+    private String created_at;
+    private String last_login;
+
 
     
 }
