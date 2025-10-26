@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.studyconnect.backend.entities;
+package de.studyconnect.backend.model;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
