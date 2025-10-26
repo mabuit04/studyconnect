@@ -1,4 +1,4 @@
-package de.studyconnect.backend.model;
+package de.studyconnect.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
