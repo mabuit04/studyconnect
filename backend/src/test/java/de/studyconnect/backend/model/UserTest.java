@@ -1,6 +1,5 @@
 package de.studyconnect.backend.model;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -10,25 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 
-
-
-
 class UserTest {
 
-    private User user;
-    //für relationship testing
-    private Group group;
-    
 
-    @BeforeEach
-    void setUp() {
-        user = new User();
-        group = new Group();
-    }
-
-    
     @Test
     void testUserCreation() {
+
+        //test user in der test funktion erstellen um störungen unter tests auszuschließen
+        User user = new User();
+
         //Test object creation with valid data
         user.setName("John");
         user.setEmail("john.doe@example.com");
@@ -46,6 +35,10 @@ class UserTest {
 
     @Test
     void testUserGroupRelationship() {
+        //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
+        User user = new User();
+        Group group = new Group();
+
         //neues Hashset mit Gruppen erzeugen
         Set<Group> groups = new HashSet<>();
         //die group dort hinzufügen
