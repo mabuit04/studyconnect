@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 //import java.time.LocalDateTime;
 
 public class GroupTest {
@@ -11,12 +14,15 @@ public class GroupTest {
 
     private Group group;
     private User creator;
+    private User member;
     
 
     @BeforeEach
     void setUp() {
+        //hier neue Klassen erzeugen vor jedem Test
         group = new Group();
         creator = new User();
+        member = new User();
 
         
     }
@@ -34,7 +40,7 @@ public class GroupTest {
         group.setVisibility(true);
         group.setMaxMembers(25);
         group.setCreatedBy(creator);
-        /*schon in BaseEntitiy
+        /*schon in BaseEntitiy enthalten:
         group.setCreatedAt(createDate);
         group.setUpdatedAt(updateDate);
         */
@@ -53,15 +59,19 @@ public class GroupTest {
         
     }
 
-    
+    @Test
+    void testTeamMembersRelationship() {
+        //neues Hashset namens members erzeugen mit lauter Usern drin
+        Set<User> members = new HashSet<>();
+        //den aktuellen User hinzufügen
+        members.add(member);
+        //der Gruppe die members hinzufügen
+        group.setMembers(members);
+
+        //Abprüfen, ob Gruppengröße == 1
+        assertEquals(1, group.getMembers().size());
+        //Abprüfen, ob die Gruppe das member enthält
+        assertTrue(group.getMembers().contains(member));
+    }
 
 }
-/*private int id;
-    private String name;
-    private String description;
-    private Boolean visibility;
-    private int maxMembers;
-    private User createdBy;
-    private String createdAt;
-    private String updatedAt;
-} */

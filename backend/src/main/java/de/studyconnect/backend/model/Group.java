@@ -1,5 +1,8 @@
 package de.studyconnect.backend.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 //import java.time.LocalDateTime;
 
 
@@ -28,5 +31,13 @@ public class Group extends BaseEntity{
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
      */
+    
+    
+     /**
+     * Members of this team
+     */
+    @ManyToMany
+    @JoinTable(name = "group_members", joinColumns = @JoinColumn(name = "groupId"), inverseJoinColumns = @JoinColumn(name = "userId"))
+    private Set<User> members = new HashSet<>();
 }
 
