@@ -5,6 +5,10 @@ import java.util.Set;
 
 //import java.time.LocalDateTime;
 
+//dependency:<artifactId>spring-boot-starter-validation</artifactId>
+import jakarta.validation.constraints.NotBlank;
+
+
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,7 +23,9 @@ import lombok.Setter;
 public class Group extends BaseEntity{
 
     //private int id;
+    @NotBlank
     private String name;
+    @NotBlank
     private String description;
     private Boolean visibility;
     private int maxMembers;

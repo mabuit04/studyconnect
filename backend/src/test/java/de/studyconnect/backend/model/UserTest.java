@@ -61,7 +61,7 @@ class UserTest {
 
 /*was fehlt: - Test validation constraints
 - Test relationships between entities -> Beziehung zw. User und Task
--  Test helper methods and business logic. -> ?
+- Test helper methods and business logic. -> ?
 Ensure that entity specific tests are available as well, e.g.,:
 - Status transitions -> ?
 - assignment logic -> ?
