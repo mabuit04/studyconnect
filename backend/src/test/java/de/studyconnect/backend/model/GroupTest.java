@@ -1,5 +1,4 @@
 package de.studyconnect.backend.model;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,25 +10,13 @@ import java.util.Set;
 
 public class GroupTest {
     
-
-    private Group group;
-    private User creator;
-    private User member;
-    
-
-    @BeforeEach
-    void setUp() {
-        //hier neue Klassen erzeugen vor jedem Test
-        group = new Group();
-        creator = new User();
-        member = new User();
-
-        
-    }
-
     
     @Test
     void testGroupCreation() {
+
+        //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
+        Group group = new Group();
+        User creator = new User();
         
         //LocalDateTime createDate = LocalDateTime.now().minusDays(180);
         //LocalDateTime updateDate = LocalDateTime.now();
@@ -61,6 +48,11 @@ public class GroupTest {
 
     @Test
     void testTeamMembersRelationship() {
+
+        //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
+        Group group = new Group();
+        User member = new User();
+
         //neues Hashset namens members erzeugen mit lauter Usern drin
         Set<User> members = new HashSet<>();
         //den aktuellen User hinzufügen
