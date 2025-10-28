@@ -1,4 +1,5 @@
 package de.studyconnect.backend.model;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -6,20 +7,24 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.HashSet;
 import java.util.Set;
 
-//import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 
 public class GroupTest {
+
+    Logger logger
+        = Logger.getLogger(
+                GroupTest.class.getName());
     
     
     @Test
     void testGroupCreation() {
-
+        logger.info("testGroupCreation running");
         //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
         Group group = new Group();
         User creator = new User();
         
-        //LocalDateTime createDate = LocalDateTime.now().minusDays(180);
-        //LocalDateTime updateDate = LocalDateTime.now();
+        LocalDateTime createDate = LocalDateTime.now().minusDays(180);
+        LocalDateTime updateDate = LocalDateTime.now();
 
         //group.setId(85);
         group.setName("ISB");
@@ -27,10 +32,10 @@ public class GroupTest {
         group.setVisibility(true);
         group.setMaxMembers(25);
         group.setCreatedBy(creator);
-        /*schon in BaseEntitiy enthalten:
+        //schon in BaseEntitiy enthalten:
         group.setCreatedAt(createDate);
         group.setUpdatedAt(updateDate);
-        */
+        //
         
         //assertEquals(85, group.getId());
         
@@ -41,13 +46,14 @@ public class GroupTest {
         assertEquals(25, group.getMaxMembers());
         assertEquals(creator, group.getCreatedBy());
         
-        //assertEquals(createDate, group.getCreatedAt());
-        //assertEquals(updateDate, group.getUpdatedAt());
+        assertEquals(createDate, group.getCreatedAt());
+        assertEquals(updateDate, group.getUpdatedAt());
         
     }
 
     @Test
     void testTeamMembersRelationship() {
+        logger.info("testMembersRelationship running");
 
         //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
         Group group = new Group();
