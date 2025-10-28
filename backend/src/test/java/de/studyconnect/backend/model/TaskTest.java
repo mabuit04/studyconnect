@@ -2,11 +2,19 @@ package de.studyconnect.backend.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.logging.Logger;
+
 import org.junit.jupiter.api.Test;
 
-public class TaskTest {
+    public class TaskTest {
+    Logger logger
+        = Logger.getLogger(
+                TaskTest.class.getName());
+
     @Test
     void testTaskCreation() {
+        logger.info("testTaskCreation running");
+
         Task task = new Task();
         User user = new User();
         Group group = new Group();
@@ -22,6 +30,8 @@ public class TaskTest {
         assertEquals(TaskStatus.TODO, task.getStatus());
         assertEquals(user, task.getAssignee());
         assertEquals(group, task.getGroup());
+        logger.info("testTaskCreation finished");
+
     }
 
 }

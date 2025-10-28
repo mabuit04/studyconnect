@@ -4,16 +4,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 
 class UserTest {
+    
+    Logger logger
+        = Logger.getLogger(
+                UserTest.class.getName());
+
 
 
     @Test
     void testUserCreation() {
+        logger.info("testUserCreation running");
 
         //test user in der test funktion erstellen um störungen unter tests auszuschließen
         User user = new User();
@@ -31,10 +38,14 @@ class UserTest {
         assertEquals("john.doe@example.com", user.getEmail());
         assertEquals("password123!", user.getPassword());
         //assertEquals(10, user.getId());
+        logger.info("testUserCreation finished");
+
     }
 
     @Test
     void testUserGroupRelationship() {
+        logger.info("testUserGroupRelationship running");
+
         //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
         User user = new User();
         Group group = new Group();
@@ -50,6 +61,8 @@ class UserTest {
         assertEquals(1, user.getGroups().size());
         //Abprüfen, ob DER Benutzer Teil der Gruppe ist
         assertTrue(user.getGroups().contains(group));
+        logger.info("testUserGroupRelationship finished");
+
     }
 
 /*was fehlt: - Test validation constraints

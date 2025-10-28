@@ -48,12 +48,14 @@ public class GroupTest {
         
         assertEquals(createDate, group.getCreatedAt());
         assertEquals(updateDate, group.getUpdatedAt());
+        logger.info("testGroupCreation finished");
+
         
     }
 
     @Test
-    void testTeamMembersRelationship() {
-        logger.info("testMembersRelationship running");
+    void testGroupMembersRelationship() {
+        logger.info("testGroupMembersRelationship running");
 
         //erstellen der Testobjekte innerhalb des Tests um gegen andere Tests abzusichern
         Group group = new Group();
@@ -70,6 +72,8 @@ public class GroupTest {
         assertEquals(1, group.getMembers().size());
         //Abprüfen, ob die Gruppe das member enthält
         assertTrue(group.getMembers().contains(member));
+        logger.info("testGroupMembersRelationship finished");
+
     }
 
 }
