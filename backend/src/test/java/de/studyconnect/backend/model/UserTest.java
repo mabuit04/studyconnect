@@ -65,8 +65,30 @@ class UserTest {
 
     }
 
+    //Test von Entity Beziehungen -> zwischen User und Task
+    @Test
+    void testUserTaskRelationship() {
+        logger.info("testUserTaskRelationship running");  
+
+        //erstellen der Testobjekte
+        User user = new User();
+        Task task = new Task();
+
+        task.setTitle("Neue Aufgabe");
+
+        //Aufgabe dem Test User zuweisen
+        user.getTasks().add(task);
+        task.setAssignee(user);
+
+        //Testabfrage ob user die Aufgabe sehen kann
+        assertEquals(1, user.getTasks().size());
+        assertTrue(user.getTasks().contains(task));
+        logger.info("testUserTaskRelationship finished");
+
+    }
+
+
 /*was fehlt: - Test validation constraints
-- Test relationships between entities -> Beziehung zw. User und Task
 - Test helper methods and business logic. -> ?
 Ensure that entity specific tests are available as well, e.g.,:
 - Status transitions -> ?

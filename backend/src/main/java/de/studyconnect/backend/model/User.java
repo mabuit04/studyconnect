@@ -44,4 +44,7 @@ public class User extends BaseEntity {
     //hat viele Member und ein User kann in mehreren Gruppen Mitglied sein
     @ManyToMany(mappedBy = "members")
     private Set<Group> groups = new HashSet<>();
+    
+    @OneToMany(mappedBy = "assignee")
+    private Set<Task> tasks = new HashSet<>();
 }
