@@ -19,6 +19,10 @@ public class Task extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
+    @Enumerated(EnumType.STRING)
+    private TaskPriority priority;
+
+
     private LocalDate dueDate;
 
     @ManyToOne(fetch = FetchType.LAZY)

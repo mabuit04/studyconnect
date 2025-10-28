@@ -94,7 +94,6 @@ Ensure that entity specific tests are available as well, e.g.,:
 - Status transitions -> ?
 - assignment logic -> ?
 - Due data validation -> ?
-- Priority management -> ?
 */
     
 

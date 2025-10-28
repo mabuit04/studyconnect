@@ -34,4 +34,20 @@ import org.junit.jupiter.api.Test;
 
     }
 
+    //Task Priority Management Test
+    @Test
+    void testTaskPriority() {
+
+        logger.info("testTaskPriority running");
+
+        //erstellen eines neuen Test Task
+        Task task = new Task();
+
+        //setzen der Task Priority
+        task.setPriority(TaskPriority.HIGH);
+        //abfragen ob Task priority wirklich auf high gesetzt wurde
+        assertEquals(TaskPriority.HIGH, task.getPriority());
+
+        logger.info("testTaskPriority finished");
+    }
 }
