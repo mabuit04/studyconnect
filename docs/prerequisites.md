@@ -28,7 +28,7 @@ Open a terminal in the backend directory and run the appropriate command for you
 
 - **Windows:**
 
-      mvnw clean test
+      mvnw.cmd clean test
 
 - **macOS / Linux:**
 
@@ -40,7 +40,7 @@ To start the backend application, run the following command from the backend dir
 
 - **Windows:**
  
-      mvnw spring-boot:run
+      mvnw.cmd spring-boot:run
   
 - **macOS / Linux:**
 
