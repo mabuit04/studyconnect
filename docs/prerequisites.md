@@ -13,12 +13,12 @@ Download and extract the file in the project directory.
 
 ### - Apache Maven
 
-This project includes the Maven Wrapper, which automatically downloads the correct Maven version. 
+This project includes "Maven Wrapper Distribution", which automatically downloads the correct Maven version at first run. 
 
 - Windows: use `mvnw.cmd` 
 - macOS/Linux: use `./mvnw` 
 
-Otherwise install maven.
+Otherwise install maven manually from https://maven.apache.org/download.cgi.
 
 ## 2. Building and Testing
 
