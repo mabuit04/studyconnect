@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class TasksSteps{
+public class TaskSteps{
     private Task task;
 
 

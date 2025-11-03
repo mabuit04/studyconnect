@@ -3,7 +3,7 @@ Feature: Task Operations
 Background: User Hugo is logged in as a standard user
 
     Scenario: Create task
-        //Given user Hugo has a valid account
+        Given user Hugo has a valid account
         When Hugo creates a new task
         Then a new task is created 
         AND Hugo sees the confirmation message 
