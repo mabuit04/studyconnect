@@ -1,6 +1,7 @@
 Feature: Task Operations
 
-Background: User Hugo is logged in as a standard user
+Background: 
+    Given User Hugo is logged in as a standard user
 
     Scenario: Create task
         Given user Hugo has a valid account
