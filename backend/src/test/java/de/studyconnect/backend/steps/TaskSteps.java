@@ -14,6 +14,13 @@ public class TaskSteps {
     private boolean exportRequestSent = false;
     private boolean confirmationMessageShown = false;
 
+    //Background Specifications
+    @Given("User Hugo is logged in as a standard user")
+    public void user_hugo_is_logged_in_as_a_standard_user() {
+        System.out.println("Simulating: User Hugo logs in as a standard user");
+    }
+
+
     // Steps for Create Task Scenario
     @Given("user Hugo has a valid account")
     public void valid_account() {

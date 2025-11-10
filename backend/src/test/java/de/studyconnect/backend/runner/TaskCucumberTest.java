@@ -9,7 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
+import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 //import org.springframework.test.context.junit.jupiter.SpringExtension;
 /*
 @RunWith(Cucumber.class)
@@ -33,9 +35,11 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @SpringBootTest
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features")
-//@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "de.studyconnect.backend")
-//@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
-
+@SelectPackages("features")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "de.studyconnect.backend.steps")
+@ConfigurationParameter(
+    key = PLUGIN_PROPERTY_NAME,
+    value = "pretty, summary, html:target/cucumber-report.html, json:target/cucumber.json"
+)
 public class TaskCucumberTest {
 }
