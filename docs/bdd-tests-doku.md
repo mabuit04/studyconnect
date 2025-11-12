@@ -2,6 +2,8 @@
 Zum Testen der Userstories mit Hilfe der Gherkin Syntax wird Cucumber verwendet: https://cucumber.io/  
 Die Dependencies müssen entsprechend der Dokumentation in der pom.xml hinzugefügt werden. Als hilfreich für das Dependeny-Management hat sich die Verwendung der cucumber-bom und junit-bom herausgestellt.   
 
+Als Feature haben wir uns die Tasks herausgesucht, die Use-Cases haben ja bereits in 'studyconnect/tree/ex2/docs/ex2-3-3-use_case create task.md', 'studyconnect/tree/ex2/docs/ex2-3-3-use_case edit task.md' und 'studyconnect/tree/ex2/docs/ex2-3-3-use_case export task.md' beschrieben. Darauf aufbauend wurden die folgenden Dateien erstellt.
+
 ## Task.feature  
 Die Gherkin Syntax wird in der Datei '/studyconnect/backend/src/test/resources/features/Task.feature' hinterlegt. Unter "Background" kann eine Vorbedingung, die für alle Szenarien gleich gilt, festgelegt werden. In unserem Beispiel sollte der User auf den sich die Szenarios beziehen eingeloggt sein.  
   
